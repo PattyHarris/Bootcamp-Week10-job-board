@@ -17,4 +17,9 @@ This week's project is to create a job board that allows access to companies to 
 > npm install -D @faker-js/faker
 ```
 
-3. Add the endpoint handlers in 'pages/api/utils.js'.
+3. Add the endpoint handlers in 'pages/api/utils.js'. Endpoints have been modified to make sure that the list of users returned contains data. Also added the bit to create the fake names up front and then only retrieve the users from that list.
+
+## Fetch Data from the Database
+
+1. Make a call to the database during the server side rendering - so in index.js, see the code for getServerSideProps - we'll add a lib/data.js to handle the actual code and then call the function in getServerSideProps.
+2. Refactor to put the guts of getting jobs in a component/Jobs.js and component/Job.js
