@@ -30,3 +30,9 @@ This week's project is to create a job board that allows access to companies to 
 2. 'pages/job/[id].js' will handle the requests for the '/job/id' route.
 3. Add 'getJob' to data.js.
 4. One mistake was to use next/link instead of next/Link - this will generate some errors about components having the same name, blah, blah, blah.
+
+## Create the Company Home Page
+
+1. Add data fetch functions to return the details of a company and the jobs associated with that company in data.js.
+2. Add the company route handler, as with jobs, 'pages/company/[id].js
+3. 
