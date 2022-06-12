@@ -23,3 +23,10 @@ This week's project is to create a job board that allows access to companies to 
 
 1. Make a call to the database during the server side rendering - so in index.js, see the code for getServerSideProps - we'll add a lib/data.js to handle the actual code and then call the function in getServerSideProps.
 2. Refactor to put the guts of getting jobs in a component/Jobs.js and component/Job.js
+
+## Create the Job Details Page
+
+1. In Job.js, link the job to the job.id - each job has a route of the form '/job/id'.
+2. 'pages/job/[id].js' will handle the requests for the '/job/id' route.
+3. Add 'getJob' to data.js.
+4. One mistake was to use next/link instead of next/Link - this will generate some errors about components having the same name, blah, blah, blah.
