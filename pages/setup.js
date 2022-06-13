@@ -5,11 +5,11 @@ import { useSession } from "next-auth/react";
 export default function Setup() {
   const router = useRouter();
 
-  const { data: session, status } = useSession();
-  const loading = status === "loading";
-
   const [name, setName] = useState("");
   const [company, setCompany] = useState(false);
+
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
 
   if (loading) {
     return null;

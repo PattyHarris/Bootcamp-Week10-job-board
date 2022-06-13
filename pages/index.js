@@ -4,11 +4,17 @@ import Jobs from "components/Jobs";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-export default function Home({ jobs }) {
+export default function Index({ jobs }) {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  if (session && !session.user.name) {
+  const loading = status === "loading";
+
+  if (loading) {
+    return null;
+  }
+
+  if (!loading && session && !session.user.name) {
     router.push("/setup");
   }
 

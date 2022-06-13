@@ -48,3 +48,13 @@ http://localhost:3000/api/auth/signout
 ```
 Although I'm not convinced this actually works.  Console shows errors...
 5. Also, mailtrap.io on Chrome for some reason, after logging in, sets the return path to /home, which doesn't exist.  If you setup the same scenario on Safari, it works fine.
+
+The Sign In button in mailtrap.io on Chrome:
+```
+http://localhost:3000/api/auth/callback/email?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fhome&token=f08ad5d0b876072d95cc3bdcf511dc49b5a5656a45b65788d246582f9f404fd1&e
+```
+
+The Sign In button in mailtrap.io on Safari:
+```
+http://localhost:3000/api/auth/callback/email?callbackUrl=http%3A%2F%2Flocalhost%3A3000&token=5a66ce989530b603713a5f6c0d9744699501c12304f280a0a18a2e5bc465c815&email=patriciaharris%40hotmail.com
+```
