@@ -35,4 +35,16 @@ This week's project is to create a job board that allows access to companies to 
 
 1. Add data fetch functions to return the details of a company and the jobs associated with that company in data.js.
 2. Add the company route handler, as with jobs, 'pages/company/[id].js
-3. 
+
+## User Login and Profile Setup
+
+1. Allow the user to login - index.js. A login button is shown if there is no session.
+2. If the user doesn't have a name, the user is directed to the 'setup' page (new page). Once they have clicked 'save', they are redirected back to the 'home' page (e.g. '/').
+3. The 'setup' form has an associate route handler in 'api/setup' (also new page).
+4. Note: to logout without a button, use the following url:
+
+```
+http://localhost:3000/api/auth/signout
+```
+Although I'm not convinced this actually works.  Console shows errors...
+5. Also, mailtrap.io on Chrome for some reason, after logging in, sets the return path to /home, which doesn't exist.  If you setup the same scenario on Safari, it works fine.
