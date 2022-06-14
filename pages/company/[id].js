@@ -1,7 +1,7 @@
 import { getCompanyJobs, getCompany } from "lib/data";
 import prisma from "lib/prisma";
 
-import Link from "next/Link";
+import Link from "next/link";
 import Job from "components/Job";
 
 export default function Company({ jobs, company }) {

@@ -3,6 +3,7 @@ import { getJobs, getUser } from "lib/data";
 import Jobs from "components/Jobs";
 import { useSession, getSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Home({ jobs, user }) {
   const { data: session, status } = useSession();
@@ -43,11 +44,13 @@ export default function Home({ jobs, user }) {
           </p>
           {user.company ? (
             <>
-              <button className="border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black ">
-                click here to post a new job
-              </button>
+              <Link href="/new">
+                <button className="border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black ">
+                  Post a New Job
+                </button>
+              </Link>
               <button className="ml-5 border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black ">
-                see all the jobs you posted
+                See Posted Jobs
               </button>
             </>
           ) : (

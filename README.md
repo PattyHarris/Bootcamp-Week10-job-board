@@ -83,3 +83,24 @@ Note: Lines with ? are optional.
 ```
 
 Not sure why no one else is seeing this...
+
+Turns out, by fixing next.config.js with the following changes, it fixes the /home problem and corrects the problem with getUser. Flavio mentions that the change below fixes a problem where the ID isn't properly captured - which makes sense in terms of the getUser problem. If there's no ID passed in, then findUnique isn't going to work unless there's some other value.
+
+```
+  async redirects() {
+    return [
+      {
+        source: "/home",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
+```
+
+## Add Submit Jobs for Companies
+
+1. Here's we'll be adding a "new.js" page and route handler which is used for submitting company jobs. Here, the page is "new.js" and the route handler is "job.js".
+2. For this portion, edit the database setting the logged in user's company flag to true.
+3. Once the new job form is submitted, it should go to the dashboard page (new lesson).
+4. Note that a 'try/catch' block was added around the job create (new.js) (from the video and is in the github version). The 'catch' doesn't do anything except log the error.
