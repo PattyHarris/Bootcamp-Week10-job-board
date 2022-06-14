@@ -46,15 +46,40 @@ This week's project is to create a job board that allows access to companies to 
 ```
 http://localhost:3000/api/auth/signout
 ```
-Although I'm not convinced this actually works.  Console shows errors...
-5. Also, mailtrap.io on Chrome for some reason, after logging in, sets the return path to /home, which doesn't exist.  If you setup the same scenario on Safari, it works fine.
+
+Although I'm not convinced this actually works. Console shows errors... 5. Also, mailtrap.io on Chrome for some reason, after logging in, sets the return path to /home, which doesn't exist. If you setup the same scenario on Safari, it works fine.
 
 The Sign In button in mailtrap.io on Chrome:
+
 ```
 http://localhost:3000/api/auth/callback/email?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fhome&token=f08ad5d0b876072d95cc3bdcf511dc49b5a5656a45b65788d246582f9f404fd1&e
 ```
 
 The Sign In button in mailtrap.io on Safari:
+
 ```
 http://localhost:3000/api/auth/callback/email?callbackUrl=http%3A%2F%2Flocalhost%3A3000&token=5a66ce989530b603713a5f6c0d9744699501c12304f280a0a18a2e5bc465c815&email=patriciaharris%40hotmail.com
 ```
+
+## Customize Customer as a User View
+
+1. If the user is a customer, we'll modify the view to show different data.
+2. Update data.js to access a single user with "getUser". Another issue here, where I had to include both the email and the ID when using findUnique. Otherwise, I got the following compile error:
+
+```
+error - Error:
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+?   id?: String,
+?   email?: String
+  }
+}
+
+Argument where of type UserWhereUniqueInput needs at least one argument. Available args are listed in green.
+
+Note: Lines with ? are optional.
+```
+
+Not sure why no one else is seeing this...
