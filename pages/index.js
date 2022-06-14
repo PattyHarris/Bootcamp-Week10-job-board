@@ -4,7 +4,7 @@ import Jobs from "components/Jobs";
 import { useSession, getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-export default function Index({ jobs, user }) {
+export default function Home({ jobs, user }) {
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -77,8 +77,6 @@ export async function getServerSideProps(context) {
       },
     };
   }
-
-  console.log(session);
 
   let user = await getUser(session.user.id, session.user.email, prisma);
   user = JSON.parse(JSON.stringify(user));

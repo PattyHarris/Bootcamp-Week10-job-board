@@ -28,4 +28,11 @@ export default NextAuth({
 
   debug: true,
   adapter: PrismaAdapter(prisma),
+
+  callbacks: {
+    session: async ({ session, user }) => {
+      session.user.id = user.id;
+      return Promise.resolve(session);
+    },
+  },
 });
