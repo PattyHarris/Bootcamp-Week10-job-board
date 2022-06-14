@@ -108,3 +108,12 @@ Turns out, by fixing next.config.js with the following changes, it fixes the /ho
 ## Add the Job Dashboard
 
 1.  Create a new page, dashboard.js to show the jobs posted by a company. Makes use of the current Job/Jobs components by adding an 'isDashboard' flag.
+
+## Allow Cover Letter from Job Seekers
+
+1. Add an Application model to the schema (and migrate....). This also required the addition of 'applications Application[]' to both Job and User tables.
+2. In the job page 'pages/job/[id].js' add a link to the URL '/job/<job id>/apply'.
+3. Create the 'pages/job/[id]/apply.js' that will contain a form for the cover letter.
+4. The 'submit' button will make a POST call to '/api/application'. When the POST is complete, the user is taken back to the dashboard.
+5. Tried to fix coverletter -> coverLetter, but that causes a bunch of problems. It needed to be fixed in the schema first...
+6. Note that the interface is a bit weird - you go to a job, where you can then click on an 'apply' button, but then it redirects you back to the dashboard...which is weird. I think this will be fixed in the next lesson.
