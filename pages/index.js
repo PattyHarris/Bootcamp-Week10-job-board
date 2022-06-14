@@ -49,9 +49,11 @@ export default function Home({ jobs, user }) {
                   Post a New Job
                 </button>
               </Link>
-              <button className="ml-5 border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black ">
-                See Posted Jobs
-              </button>
+              <Link href={"/dashboard"}>
+                <button className="ml-5 border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black ">
+                  See Posted Jobs
+                </button>
+              </Link>
             </>
           ) : (
             <>
@@ -81,7 +83,7 @@ export async function getServerSideProps(context) {
     };
   }
 
-  let user = await getUser(session.user.id, session.user.email, prisma);
+  let user = await getUser(session.user.id, prisma);
   user = JSON.parse(JSON.stringify(user));
 
   return {

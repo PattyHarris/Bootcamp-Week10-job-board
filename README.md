@@ -104,3 +104,7 @@ Turns out, by fixing next.config.js with the following changes, it fixes the /ho
 2. For this portion, edit the database setting the logged in user's company flag to true.
 3. Once the new job form is submitted, it should go to the dashboard page (new lesson).
 4. Note that a 'try/catch' block was added around the job create (new.js) (from the video and is in the github version). The 'catch' doesn't do anything except log the error.
+
+## Add the Job Dashboard
+
+1.  Create a new page, dashboard.js to show the jobs posted by a company. Makes use of the current Job/Jobs components by adding an 'isDashboard' flag.
