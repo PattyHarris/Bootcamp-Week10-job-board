@@ -30,8 +30,9 @@ export default async function handler(req, res) {
     });
 
     if (users.length == 0) {
-      console.log("You must have one company user to generate a job!");
-      return res.end();
+      return res.status(409).json({
+        message: `No user found in database. Create a user first.`,
+      });
     }
 
     await prisma.job.create({
@@ -78,8 +79,9 @@ export default async function handler(req, res) {
     });
 
     if (users.length == 0) {
-      console.log("You must have one company user to generate a job!");
-      return res.end();
+      return res.status(409).json({
+        message: `No users found in the database yet.  No jobs created.`,
+      });
     }
 
     users.forEach(async (user) => {

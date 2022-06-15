@@ -127,3 +127,11 @@ Turns out, by fixing next.config.js with the following changes, it fixes the /ho
 
 1. Handle the case where the user has already applied to a job and prevent further applications.
 2. The condition will be handled by 'areadyApplied' (in data.js). The function is used in 'pages/job/[id].js' by 'getServerSideProps'.
+
+## Show Applicants on Company Dashboard
+
+1. Instead of using the Job component directly, iterate over the jobs to fine tune the display.
+2. The 'isDashboard' prop is also no longer needed and can be removed from the Job component?
+3. Add 'getJobApplications' to data.js - this is then called by 'getJobsPosted' (of the same file).
+4. In 'dashboard.js', for each job, show the applicants if any.
+5. There is a key prop bug with Flavio's code - the new code needed to have key={index} added correctly to both mappings - I've fixed the issue, so the code is different than what is posted.
