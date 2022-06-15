@@ -117,3 +117,8 @@ Turns out, by fixing next.config.js with the following changes, it fixes the /ho
 4. The 'submit' button will make a POST call to '/api/application'. When the POST is complete, the user is taken back to the dashboard.
 5. Tried to fix coverletter -> coverLetter, but that causes a bunch of problems. It needed to be fixed in the schema first...
 6. Note that the interface is a bit weird - you go to a job, where you can then click on an 'apply' button, but then it redirects you back to the dashboard...which is weird. I think this will be fixed in the next lesson.
+
+## Create the User Dashboard
+
+1. Add a getApplications method to data.js to return the user's job applications.
+2. Import the new function in dashboard.js. In the 'getServerSideProps', call 'getApplications' if the user isn't a company.
