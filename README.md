@@ -135,3 +135,8 @@ Turns out, by fixing next.config.js with the following changes, it fixes the /ho
 3. Add 'getJobApplications' to data.js - this is then called by 'getJobsPosted' (of the same file).
 4. In 'dashboard.js', for each job, show the applicants if any.
 5. There is a key prop bug with Flavio's code - the new code needed to have key={index} added correctly to both mappings - I've fixed the issue, so the code is different than what is posted.
+
+## Allow Companies to Un-publish Jobs
+
+1. In 'Job.js', add a PUT submit to update the status of the job from published/unpublished.
+2. Handle the PUT in 'pages/api/job.js'
