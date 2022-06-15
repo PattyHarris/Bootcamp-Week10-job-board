@@ -122,3 +122,8 @@ Turns out, by fixing next.config.js with the following changes, it fixes the /ho
 
 1. Add a getApplications method to data.js to return the user's job applications.
 2. Import the new function in dashboard.js. In the 'getServerSideProps', call 'getApplications' if the user isn't a company.
+
+## Verify User Applications
+
+1. Handle the case where the user has already applied to a job and prevent further applications.
+2. The condition will be handled by 'areadyApplied' (in data.js). The function is used in 'pages/job/[id].js' by 'getServerSideProps'.
